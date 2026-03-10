@@ -1,57 +1,38 @@
-# How to Run and Preview the Project
+# Flask Distributed File Storage System with Load Balancing
+This project implements a distributed file storage system using Flask, a Python microframework, along with a load balancer for distributing incoming requests across multiple Flask servers. The system provides users with the ability to upload and download files through a web interface while ensuring efficient load distribution across server instances.
 
-## 1. Clone or Download the Project
+## Features
+Upload and Download Functionality: Users can upload files to the system using a web form and download previously uploaded files by selecting them from a dropdown menu.
 
-Ensure all files are in the correct structure:
+### Load Balancing: 
+A custom load balancer distributes incoming requests among multiple Flask server instances to ensure optimal resource utilization and response times. The load balancer dynamically adjusts the load distribution based on the current load on each server.
 
-```
-project-root/
-│
-├── Assets/
-├── backend/
-│   └── listings.json
-│   └── app.py 
-├── index.html
-├── styles.css
-├── script.js
-└── README.md
-```
+### Fault Tolerance: 
+The system incorporates fault tolerance mechanisms to handle server failures gracefully. In the event of a server failure, the load balancer redirects requests to other available servers, ensuring uninterrupted service.
 
-## 2. Set Up the Backend (Flask API)
+### File Management: 
+Uploaded files are stored in a designated directory on the server and are uniquely identified to prevent overwriting. Users can download files securely with options for renaming and downloading.
 
-### Step 1: Install Python Dependencies
+### Scalability: 
+The system is designed to scale horizontally by adding more Flask server instances as the demand for file storage and retrieval increases. The load balancer seamlessly distributes requests across all available servers, enabling the system to handle a large volume of concurrent users.
 
-```bash
-pip install flask flask-cors
-```
+## Usage
+### Clone the Repository: 
+Clone the repository to your local machine using the following command:
 
-### Step 2: Run the Flask App
+### bash
+`git clone https://github.com//RameshBabuAsh/distributed_file_storage_systems.git`
 
-In the project root directory:
+### Set up Flask Servers:
+Run the server scripts on different ports (e.g., 5000, 5001) to set up multiple Flask server instances.
 
-```bash
-python app.py
-```
+### Start the Load Balancer: 
+Run the load balancer script to handle incoming requests and distribute them across the Flask servers.
 
-The backend will run at:  
-`http://127.0.0.1:5000/api/listings`
+`python load_balancer.py`
 
-## 3. Preview the Frontend
+### Access the Web Interface: 
+Open a web browser and navigate to the appropriate URL to access the web interface. You can upload and download files through the interface.
 
-### Step 1: Open `index.html`
-
-Open the file directly in your browser:
-
-```
-project-root/index.html
-```
-
-> Use your browser’s developer tools (F12) and enable mobile view (toggle device toolbar) for the best experience.
-
-### Step 2: Ensure Flask is Running
-
-Make sure `app.py` is running in the terminal before using the site so that listing data can be fetched.
-
----
-
-You're now ready to use the application.
+### Monitor Server Loads: 
+Monitor server loads and system performance to ensure efficient operation. You can adjust server configurations or add more instances as needed to optimize performance.
