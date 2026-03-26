@@ -10,9 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/yigithankarabulut/distributed-file-storage/crypto"
-	"github.com/yigithankarabulut/distributed-file-storage/p2p"
-	"github.com/yigithankarabulut/distributed-file-storage/store"
+
 )
 
 // ServerOpts is a struct that contains the configuration for the file server.
