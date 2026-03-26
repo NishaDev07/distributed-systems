@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/yigithankarabulut/distributed-file-storage/crypto"
 )
 
 const defaultRootFolderName = "store"
